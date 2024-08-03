@@ -1,0 +1,35 @@
+function get_user_input():
+    prompt "Enter elements separated by spaces: "
+    read input
+    parse input into a list of integers
+    return list of elements
+
+function generate_divisibility_relations(elements):
+    initialize an empty list for relations
+    for each element a in elements:
+        for each element b in elements:
+            if a != b and b % a == 0:
+                add (a, b) to relations
+    return relations
+
+function is_transitive(a, b, relations):
+    for each (x, y) in relations:
+        if (a, x) in relations and (x, b) in relations:
+            return true
+    return false
+
+function remove_transitive_relations(relations):
+    initialize an empty list for final_relations
+    for each (a, b) in relations:
+        if not is_transitive(a, b, relations):
+            add (a, b) to final_relations
+    return final_relations
+
+function main():
+    elements = get_user_input()
+    relations = generate_divisibility_relations(elements)
+    final_relations = remove_transitive_relations(relations)
+    print "Final relations (direct edges) for Hasse diagram:"
+    print final_relations
+
+main()
