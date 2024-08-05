@@ -16,7 +16,8 @@ This python file can generate hasse diagram for the a|b relation on any given se
 
 ## Examples
 for the input 1,2,3,4,6,8,9,12,18,24
-<img src="">
+
+<img src="https://github.com/VedeshP/hasse_diagram_py/blob/d2b1ccb51de466e51b261d7c0f7642eabe16cb40/a.png">
 
 ## Note
 - This code only works if the given set gives valid poset
