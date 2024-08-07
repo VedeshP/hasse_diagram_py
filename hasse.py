@@ -1,7 +1,7 @@
 import sys
 import networkx as nx
 import matplotlib.pyplot as plt
-from networkx.drawing.nx_agraph import graphviz_layout
+# from networkx.drawing.nx_agraph import graphviz_layout
 from collections import deque
 
 def get_user_input():
@@ -47,6 +47,7 @@ def generate_divisibility_relations(elements):
     relations = []
     for a in elements:
         for b in elements:
+            # Here reflexive relations are deliberately not added because they do not help in diagram generation
             if a != b and b % a == 0:
                 relations.append([a, b])
     
